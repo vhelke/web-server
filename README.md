@@ -10,7 +10,7 @@ Please run the web server:
 
 #### Go on your browser to ``http://localhost:<port number>``, and you should see an index-page.
 
-If you want, you can add extra content to the www-data -folder.
+If you want, you can add extra content to the www-data -folder.  
 Web server is capable to deliver web pages (.htm / .html / .txt) to the client.
 
 There are unit-tests included for the web server.  
