@@ -60,7 +60,7 @@ def get_file(url):
                 return get_error_page()
     else:  # file
         try:
-            f = open("wwww-data" + url)
+            f = open("www-data" + url)
         except FileNotFoundError:
             return get_error_page()
 
@@ -128,7 +128,12 @@ def bind_to_port(port):
                             except (ConnectionResetError, BrokenPipeError):
                                     pass
                             file = fetch["file"]
-                            outputdata = file.read()
+
+                            try:
+                                outputdata = file.read()
+                            except UnicodeDecodeError:
+                                eprint("Exiting because of non-supported content.")
+                                sys.exit(6)
                             file.close()
                             for i in range(0, len(outputdata)):
                                 try:
